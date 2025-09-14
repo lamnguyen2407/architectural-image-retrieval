@@ -20,6 +20,18 @@ cd image-retrieval-clip
 pip install -r requirements.txt
 
 ---
+## 📂 Dataset
+
+This project uses an architectural image dataset.  
+You need to manually download the dataset from Kaggle (or another source) as a `.zip` file.
+
+### Steps:
+1. Download the dataset `.zip` file and place it in the root directory of this repository (e.g., `archive.zip`).
+2. Run the following command to extract and classify the dataset:
+
+python -c "from dataset_prep import prepare_dataset; prepare_dataset('archive.zip', 'dataset_raw', 'data/train')" 
+
+---
 ## 📊 Usage
 **Run pipeline locally:**
 python main.py
