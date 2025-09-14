@@ -28,9 +28,9 @@ You need to manually download the dataset from Kaggle (or another source) as a `
 ### Steps:
 1. Download the dataset `.zip` file and place it in the root directory of this repository (e.g., `archive.zip`).
 2. Run the following command to extract and classify the dataset:
-
+```bash
 python -c "from dataset_prep import prepare_dataset; prepare_dataset('archive.zip', 'dataset_raw', 'data/train')" 
-
+```
 ---
 ## 📊 Usage
 **Run pipeline locally:**
