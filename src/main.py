@@ -7,20 +7,18 @@ ROOT = "data"
 TRAIN_PATH = f"{ROOT}/train"
 
 def main():
-    # Giả sử bạn đã có dataset.zip trong content/archive.zip
     src_zip = "archive.zip"
     extract_folder = "dataset_raw"
 
-    # Chuẩn bị dataset
     prepare_dataset(src_zip, extract_folder, TRAIN_PATH)
 
     class_names = sorted(os.listdir(TRAIN_PATH))
     print("There are", len(class_names), "classes.")
 
-    # Lấy toàn bộ file ảnh
+    # Get entire images
     files_path = get_files_path(path=TRAIN_PATH, class_names=class_names)
 
-    # Tạo collection
+    # Create collection
     l2_collection = create_collection(name="l2_collection", space="l2")
     add_embedding(l2_collection, files_path)
 
